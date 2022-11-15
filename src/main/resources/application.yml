@@ -1,1 +1,4 @@
-
+spring:
+  datasource:
+    url: jdbc:h2:mem:wc-match-db
+    username: grept
