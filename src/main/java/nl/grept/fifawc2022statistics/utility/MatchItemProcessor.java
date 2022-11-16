@@ -32,7 +32,7 @@ public class MatchItemProcessor implements ItemProcessor<MatchInput, Match> {
         match.setCountry(matchInput.getCountry());
         match.setHomeTeamResult(matchInput.getHomeTeamResult());
 
-        log.info("Converting MatchInput into Match.");
+        log.info("Converting <" + matchInput.toString() + "> into Match object.");
 
         return match;
     }

@@ -16,4 +16,13 @@ public class MatchInput {
     String city;
     String country;
     String homeTeamResult;
+
+    @Override
+    public String toString() {
+        return "MatchInput{" +
+                homeTeam + "\t\t\t" + homeTeamScore +
+                " - " +
+                awayTeamScore + "\t\t" + awayTeam +
+                "}";
+    }
 }
