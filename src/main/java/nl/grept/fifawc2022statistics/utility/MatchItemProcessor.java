@@ -16,6 +16,7 @@ public class MatchItemProcessor implements ItemProcessor<MatchInput, Match> {
     public Match process(MatchInput matchInput) throws Exception {
         Match match = new Match();
 
+        match.setId(matchInput.getDate() + "_" + matchInput.getHomeTeam() + "-" + matchInput.getAwayTeam());
         match.setDate(LocalDate.parse(matchInput.getDate()));
 
         match.setHomeTeam(matchInput.getHomeTeam());
@@ -32,7 +33,7 @@ public class MatchItemProcessor implements ItemProcessor<MatchInput, Match> {
         match.setCountry(matchInput.getCountry());
         match.setHomeTeamResult(matchInput.getHomeTeamResult());
 
-        log.info("Converting <" + matchInput.toString() + "> into Match object.");
+//        log.info("Converting <" + matchInput.toString() + "> into Match object.");
 
         return match;
     }

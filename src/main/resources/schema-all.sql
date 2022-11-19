@@ -1,6 +1,7 @@
 drop table matches IF EXISTS;
 
 create TABLE matches (
+    id varchar(255),
     date DATE,
     home_team varchar(255),
     away_team varchar(255),

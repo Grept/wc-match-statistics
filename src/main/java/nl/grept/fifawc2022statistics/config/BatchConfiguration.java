@@ -43,9 +43,9 @@ public class BatchConfiguration {
 
     private final String SQL_INSERT_STATEMENT =
             "INSERT INTO matches " +
-            "(date, home_team, away_team, home_team_fifa_rank, away_team_fifa_rank, home_team_score, away_team_score, tournament, city, country, home_team_result) " +
+            "(id, date, home_team, away_team, home_team_fifa_rank, away_team_fifa_rank, home_team_score, away_team_score, tournament, city, country, home_team_result) " +
             "VALUES " +
-            "(:date, :homeTeam, :awayTeam, :homeTeamFifaRank, :awayTeamFifaRank, :homeTeamScore, :awayTeamScore, :tournament, :city, :country, :homeTeamResult)";
+            "(:id, :date, :homeTeam, :awayTeam, :homeTeamFifaRank, :awayTeamFifaRank, :homeTeamScore, :awayTeamScore, :tournament, :city, :country, :homeTeamResult)";
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;

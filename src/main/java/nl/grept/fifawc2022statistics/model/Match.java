@@ -4,13 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "matches")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Match {
 
+    @Id
+    String id;
     LocalDate date;
     String homeTeam;
     String awayTeam;

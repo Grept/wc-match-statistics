@@ -16,7 +16,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 
     private final String SQL_QUERY =
                     "SELECT " +
-                    "date, home_team, away_team, home_team_fifa_rank, away_team_fifa_rank, home_team_score, away_team_score, tournament, city, country, home_team_result " +
+                    "id, date, home_team, away_team, home_team_fifa_rank, away_team_fifa_rank, home_team_score, away_team_score, tournament, city, country, home_team_result " +
                     "FROM matches";
 
     private final JdbcTemplate jdbcTemplate;
@@ -33,19 +33,21 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
             jdbcTemplate.query(SQL_QUERY,
                     (rs, row) ->
                             new Match(
-                                    rs.getDate(1).toLocalDate(),    // date
-                                    rs.getString(2),                // homeTeam
-                                    rs.getString(3),                // awayTeam
-                                    rs.getInt(4),                   // homeRank
-                                    rs.getInt(5),                   // awayRank
-                                    rs.getInt(6),                   // homeScore
-                                    rs.getInt(7),                   // awayScore
-                                    rs.getString(8),                // tournament
-                                    rs.getString(9),                // city
-                                    rs.getString(10),               // country
-                                    rs.getString(11)                // result
+                                    rs.getString(1),
+                                    rs.getDate(2).toLocalDate(),    // date
+                                    rs.getString(3),                // homeTeam
+                                    rs.getString(4),                // awayTeam
+                                    rs.getInt(5),                   // homeRank
+                                    rs.getInt(6),                   // awayRank
+                                    rs.getInt(7),                   // homeScore
+                                    rs.getInt(8),                   // awayScore
+                                    rs.getString(9),                // tournament
+                                    rs.getString(10),                // city
+                                    rs.getString(11),               // country
+                                    rs.getString(12)                // result
                             )
-            ).forEach(match -> log.info("Found <" + match + "> in the database."));
+            );
+//                    .forEach(match -> log.info("Found <" + match + "> in the database."));
         }
     }
 }
