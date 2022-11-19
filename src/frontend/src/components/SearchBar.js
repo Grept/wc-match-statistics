@@ -9,7 +9,7 @@ const SearchBar = () => {
 
     async function requestMatchData(data) {
         const response = await axios.get(`http://localhost:8080/matches?team1=${data.team1}&team2=${data.team2}`);
-        console.log(response);
+        console.log(response.data);
     }
 
     return(
