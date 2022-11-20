@@ -11,23 +11,23 @@ const Match = ({matchData}) => {
             <p className="matchCard__date">{matchData.date} | {matchData.city}</p>
             <h3
                 className="homeTeam"
-                id={matchData.homeTeamResult === "Win" ? "win" : "lose"}>
+                id={matchData.homeTeamResult === "Win" ? "win" : (matchData.homeTeamResult === "Lose" ? "lose" : "draw")}>
                 {matchData.homeTeam}
 
                 <span
                     className="score">
-                    {matchData.homeTeamScore}
+                    : {matchData.homeTeamScore}
                 </span>
             </h3>
 
             <h3
                 className="awayTeam"
-                id={matchData.homeTeamResult === "Win" ? "lose" : "win"}>
+                id={matchData.homeTeamResult === "Win" ? "lose" : (matchData.homeTeamResult === "Lose" ? "win" : "draw")}>
                 {matchData.awayTeam}
 
                 <span
                     className="score">
-                    {matchData.awayTeamScore}
+                    : {matchData.awayTeamScore}
                 </span>
             </h3>
 
