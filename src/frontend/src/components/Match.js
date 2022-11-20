@@ -1,10 +1,13 @@
 import React from "react";
 
-const Match = () => {
+const Match = ({matchData}) => {
+
+    console.log(matchData)
 
     return(
-        <div>
-            <h4>Match</h4>
+        <div className="matchCard">
+            <p>Date: {matchData.date}</p>
+
         </div>
     );
 }

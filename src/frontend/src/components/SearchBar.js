@@ -1,15 +1,21 @@
-import React from "react";
+import React, {useContext} from "react";
 import  {useForm} from "react-hook-form";
 import axios from "axios";
+import "./SearchBar.scss";
+import {MatchesContext} from "../context/MatchesContext";
 
 const SearchBar = () => {
 
 
     const {register, handleSubmit} = useForm();
 
+    const {setMatchList} = useContext(MatchesContext);
+
     async function requestMatchData(data) {
         const response = await axios.get(`http://localhost:8080/matches?team1=${data.team1}&team2=${data.team2}`);
+        setMatchList(response.data);
         console.log(response.data);
+
     }
 
     return(
