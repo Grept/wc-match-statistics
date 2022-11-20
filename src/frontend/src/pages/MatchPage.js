@@ -9,7 +9,7 @@ const MatchPage = () => {
 
     return(
         <div className="matchPageContainer">
-            <h1>Match Page</h1>
+            <h1>All matches between {matchList[0].homeTeam} and {matchList[0].awayTeam}</h1>
             <ul className="matchList">
                 {matchList &&
                 matchList.map((m) => {
